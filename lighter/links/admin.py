@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import LinkGroup, LinkPage, Link
+
+admin.site.register((LinkPage, LinkGroup, Link))
