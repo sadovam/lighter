@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+</head>
+<body>
+    <div>
+        <h1>Links Start Page</h1>
+    </div>
+    {% for page in link_pages_list %}
+      <hr>
+      <h2>{{ page.name }}</h2>
+      <h3>Author: {{ page.author }}</h3>
+      <p><strong>Description: </strong> {{ page.description }} </p>
+      <p>Is public: {{ page.is_public }} </p>
+    {% endfor %}
+    <hr>
+    
+</body>
+</html>
