@@ -8,15 +8,20 @@
 </head>
 <body>
     <div>
-        <h1>Links Start Page</h1>
-    </div>
-    {% for page in link_pages_list %}
-      <hr>
-      <a href="{% url 'links:page' page.id %}">{{ page.name }}</a>
-      <h2>{{ page.name }}</h2>
+      <h1>{{ page.name }}</h1>
+      <h2></h2>
       <h3>Author: {{ page.author }}</h3>
       <p><strong>Description: </strong> {{ page.description }} </p>
       <p>Is public: {{ page.is_public }} </p>
+    </div>
+    
+    {% for group in page.linkgroup_set.all %}
+      <hr>
+      
+      <h2>{{ group.name }}</h2>
+      <h3>Author: {{ group.author }}</h3>
+      <p><strong>Note: </strong> {{ group.note }} </p>
+      <p>Is public: {{ group.is_public }} </p>
     {% endfor %}
     <hr>
     
